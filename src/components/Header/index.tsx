@@ -1,6 +1,8 @@
 "use client"
 import {Flex, NavLink, Stack} from "@mantine/core";
 import Image from "next/image";
+import classes from "@/components/Header/Demo.css";
+
 const aulas = [{
     label: "Aula 01",
     link: "/aula-01"
@@ -16,13 +18,13 @@ const aulas = [{
 }]
 const Header = () => {
 
-    return <Flex className={"p-4 bg-[#A154F2]"}>
+    return <Flex className={"absolute p-4 w-full"}>
         <Flex w={"70%"}>
-            <Image src={"/logo.svg"} alt={"logo"} width={100} height={100}  />
+            <Image src={"/logo.png"} alt={"logo"} width={100} height={100} className={"mt-[1rem] ml-[8rem]"}/>
         </Flex>
-       <Flex w={"30%"}> {aulas.map((aula, index) => {
-           return <NavLink className={"text-white"} href={aula.link} key={index} label={aula.label} />
-       })}</Flex>
+        <Flex w={"30%"}> {aulas.map((aula, index) => {
+            return <NavLink className="classes.header" href={aula.link} key={index} label={aula.label}/>
+        })}</Flex>
     </Flex>
 }
 
